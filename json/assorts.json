@@ -1,0 +1,25 @@
+{
+    "pineapple_1": {
+        "name": "ДЫНЯ НОМЕР 1",
+        "types": "pineapple_1",
+        "price": "1250 руб.",
+        "img": "img/pineapple_1.png",
+        "description": "ДЫНЯ~~~"
+    },
+    
+    "pineapple_2": {
+        "name": "ДЫНЯ СОЧНАЯ!!!",
+        "types": "pineapple_2",
+        "price": "150 руб.",
+        "img": "img/pineapple_2.png",
+        "description": "ДЫНЯЯЯЯЯЯЯЯЯ!!!! ААААА!!"
+    },
+    
+    "pineapple_3": {
+        "name": "ДЫНЯ ПАПА МОЖЕТ!!!",
+        "types": "pineapple_2",
+        "price": "550 руб.",
+        "img": "img/pineapple_3.png",
+        "description": "ХЗ что написать"
+    }
+}
