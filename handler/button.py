@@ -1,4 +1,4 @@
-from aiogram.utils.keyboard import ReplyKeyboardBuilder, InlineKeyboardBuilder
+from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 
 def menu():
@@ -26,11 +26,12 @@ def menu_reviews(price, pluse=True):
     build = InlineKeyboardBuilder()
 
     if pluse:
-        build.button(text="<", callback_data=f"back_reviews:{price}"),
-        build.button(text=str(price+1), callback_data="null"),
+        build.button(text="<", callback_data=f"back_reviews:{price}")
+        build.button(text=str(price+1), callback_data="null")
         build.button(text=">", callback_data=f"next_reviews:{price}")
     
     build.button(text="Оставить отзыв", callback_data=f"send_reviews")
+    build.button(text="Главное меню", callback_data="main_menu")
 
     build.adjust(3)
 
@@ -39,12 +40,25 @@ def menu_reviews(price, pluse=True):
 def menu_assorts(price, types, name, prices):
     build = InlineKeyboardBuilder()
 
-    build.button(text="<", callback_data=f"back_assort:{price}"),
-    build.button(text=str(price+1), callback_data="null"),
+    build.button(text="<", callback_data=f"back_assort:{price}")
+    build.button(text=str(price+1), callback_data="null")
     build.button(text=">", callback_data=f"next_assort:{price}")
     build.button(text="Заказать", callback_data=f"order:{types}:{name}:{prices}")
-    build.button(text="Добавть в корзину", callback_data=f"basket:{types}:{name}:{prices}")
-    build.button(text="Главное меню", callback_data=f"main_menu")
+    build.button(text="Добавть в корзину", callback_data=f"pluse_basket:{types}:{name}:{prices}")
+    build.button(text="Главное меню", callback_data="main_menu")
+
+    build.adjust(3)
+
+    return build.as_markup()
+
+def menu_basket(price, types, name, prices):
+    build = InlineKeyboardBuilder()
+
+    build.button(text="<", callback_data=f"back_basket:{price}")
+    build.button(text=str(price+1), callback_data="null")
+    build.button(text=">", callback_data=f"next_basket:{price}")
+    build.button(text="Заказать", callback_data=f"order:{types}:{name}:{prices}")
+    build.button(text="Главное меню", callback_data="main_menu")
 
     build.adjust(3)
 

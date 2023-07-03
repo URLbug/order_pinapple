@@ -7,9 +7,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 
 
-config = json.load(open('./json/config.json', 'rb'))
-admins = json.load(open('./json/admin.json', 'rb'))
-assorts = json.load(open('./json/assorts.json', 'rb'))
+config = json.load(open('./jsons/config.json', 'rb'))
+admins = json.load(open('./jsons/admin.json', 'rb'))
+assorts = json.load(open('./jsons/assorts.json', 'rb'))
 
 bot = Bot(config['TOKEN'])
 

@@ -46,5 +46,6 @@ basket = Table(
    Column("name_user", String(100)),
    Column('name', String(100)),
    Column('types', String(100)),
-   Column('price', String(100))
+   Column('price', String(100)),
+   Column('amount', String(100))
 )

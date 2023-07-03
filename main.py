@@ -4,7 +4,7 @@ from aiogram import Dispatcher
 
 from __init__ import bot
 from database import database # Создает, активирует, базу данных
-from handler import home, assorts, reviews
+from handler import home, assorts, reviews, order, basket, admin
 
 
 # Запуск бота
@@ -16,7 +16,10 @@ async def main():
     dp.include_routers(
         home.route, 
         assorts.route,
-        reviews.route)
+        reviews.route,
+        order.route,
+        basket.route,
+        admin.route)
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)

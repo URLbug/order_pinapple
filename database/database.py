@@ -76,18 +76,21 @@ class Basket(Base):
   types = Column(String(100))
   name = Column(String(100))
   price = Column(String(100))
+  amount = Column(String(100))
 
-  def __init__(self, id_user, name_user, types, price):
+  def __init__(self, id_user, name_user, name, types, price, amount):
      self.id_user = id_user
      self.name_user = name_user
+     self.name = name
      self.types = types
      self.price = price
+     self.amount = amount
   
 
-def update_count_offers(id_to_update, new_desc):
+def update_count_offers(id_up, id_to_update, new_desc, count_offers, class_):
     try:
-        query = session.query(User).filter(User.id_user == id_to_update).\
-            update({User.count_offers: new_desc}, synchronize_session=False)
+        query = session.query(class_).filter(id_up == id_to_update).\
+            update({count_offers: new_desc}, synchronize_session=False)
         session.commit()
     except:
         session.rollback()
